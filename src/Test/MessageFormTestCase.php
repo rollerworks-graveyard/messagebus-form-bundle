@@ -7,7 +7,6 @@ namespace Rollerworks\Bundle\MessageBusFormBundle\Test;
 use Closure;
 use Psr\Container\ContainerInterface;
 use Rollerworks\Bundle\MessageBusFormBundle\Type\MessageFormType;
-use Symfony\Component\Form\FormError;
 use Symfony\Component\Form\FormInterface;
 use Symfony\Component\Form\Test\TypeTestCase;
 use Symfony\Component\Messenger\Handler\HandlersLocator;
