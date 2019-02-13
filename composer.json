@@ -1,0 +1,35 @@
+{
+    "name": "rollerworks/messagebus-form-bundle",
+    "type": "library",
+    "description": "",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Sebastiaan Stok",
+            "email": "s.stok@rollerscapes.net"
+        }
+    ],
+    "require": {
+        "symfony/framework-bundle": "^4.2",
+        "symfony/messenger": "^4.2",
+        "symfony/form": "^4.2",
+        "symfony/validator": "^4.2"
+    },
+    "require-dev": {
+        "symfony/phpunit-bridge": "^4.2",
+        "doctrine/coding-standard": "^5.0",
+        "psalm/plugin-phpunit": "^0.4.0",
+        "symfony/translation": "^4.2",
+        "phpunit/phpunit": "^7.5.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Rollerworks\\Bundle\\MessageBusFormBundle\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Rollerworks\\Bundle\\MessageBusFormBundle\\Tests\\": "tests"
+        }
+    }
+}
