@@ -12,10 +12,11 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\FormEvent;
 use Symfony\Component\Form\FormEvents;
 use Symfony\Component\Form\FormInterface;
+use Symfony\Component\Messenger\Exception\HandlerFailedException;
 use Symfony\Component\Messenger\MessageBusInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Contracts\Translation\TranslatorInterface;
-use Throwable;
+use function current;
 use function explode;
 use function get_class;
 use function is_array;
@@ -94,7 +95,13 @@ final class MessageFormType extends AbstractType
     {
         try {
             $bus->dispatch($command);
-        } catch (Throwable $e) {
+        } catch (HandlerFailedException $e) {
+            $e = current($e->getNestedExceptions());
+
+            if ($e === false) {
+                return;
+            }
+
             $exceptionName = get_class($e);
 
             if (isset($exceptionMapping[$exceptionName])) {
