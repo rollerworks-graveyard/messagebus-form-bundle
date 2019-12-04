@@ -105,9 +105,9 @@ final class MessageFormType extends AbstractType
             $exceptionName = get_class($e);
 
             if (isset($exceptionMapping[$exceptionName])) {
-                $errors = $exceptionMapping[$exceptionName]($e, $this->translator);
+                $errors = $exceptionMapping[$exceptionName]($e, $this->translator, $form);
             } elseif ($exceptionFallback !== null) {
-                $errors = $exceptionFallback($e, $this->translator);
+                $errors = $exceptionFallback($e, $this->translator, $form);
             } else {
                 throw $e;
             }
