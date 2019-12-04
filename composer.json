@@ -10,17 +10,18 @@
         }
     ],
     "require": {
-        "symfony/framework-bundle": "^4.3",
-        "symfony/messenger": "^4.3",
-        "symfony/form": "^4.3",
-        "symfony/validator": "^4.3"
+        "php": "^7.2",
+        "symfony/framework-bundle": "^4.4 || ^5.0",
+        "symfony/messenger": "^4.4 || ^5.0",
+        "symfony/form": "^4.4 || ^5.0",
+        "symfony/validator": "^4.4 || ^5.0"
     },
     "require-dev": {
-        "symfony/phpunit-bridge": "^4.3",
+        "symfony/phpunit-bridge": "^4.4 || ^5.0",
         "doctrine/coding-standard": "^5.0",
         "psalm/plugin-phpunit": "^0.4.0",
-        "symfony/translation": "^4.3",
-        "phpunit/phpunit": "^7.5.4"
+        "symfony/translation": "^4.4 || ^5.0",
+        "phpunit/phpunit": "^7.5.4 || ^8.4.3"
     },
     "autoload": {
         "psr-4": {
